@@ -153,7 +153,7 @@ function appendVideoIndicator(target) {
     return navigator.share({
       title: chrome.i18n.getMessage("extensionName"),
       text: chrome.i18n.getMessage("extensionDescription"),
-      url: `https://chrome.google.com/webstore/detail/${chrome.runtime.id}`,
+      url: `https://microsoftedge.microsoft.com/addons/detail/${chrome.runtime.id}`,
     });
   };
 
@@ -288,7 +288,7 @@ function createRatingQuestion(videoCount) {
   ]);
 
   const reviewButton = document.createElement("a");
-  reviewButton.href = `https://chrome.google.com/webstore/detail/${chrome.runtime.id}/reviews`;
+  reviewButton.href = `https://microsoftedge.microsoft.com/addons/detail/${chrome.runtime.id}`;
   reviewButton.target = "_blank";
   reviewButton.rel = "noopener";
   reviewButton.style.backgroundColor = "var(--yt-spec-badge-chip-background)";
