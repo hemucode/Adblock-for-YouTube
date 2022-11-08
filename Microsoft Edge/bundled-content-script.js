@@ -1,6 +1,6 @@
 /**
- * By @Codehemu - https://github.com/hemucode/nonstop-youtube/license ( JS: MIT License)
- * License - https://github.com/hemucode/nonstop-youtube/license ( CSS: MIT License)
+ * By @Codehemu - https://raw.githubusercontent.com/hemucode/Adblock-for-YouTube/main/Microsoft%20Edge/bundled-content-script.js ( JS: MIT License)
+ * License - https://github.com/hemucode/Adblock-for-YouTube/blob/main/LICENSE ( CSS: MIT License)
  * @returns Promise
  */
 async function init() {
