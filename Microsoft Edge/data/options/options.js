@@ -1,8 +1,4 @@
 /**
- * Translates all html elements,
- * that have a `data-message` attribute.
- * The message is the corresponding _locale
- * key
  *
  * @returns Promise
  */
@@ -23,8 +19,6 @@ function translate() {
 }
 
 /**
- * Gets everything ready :)
- *
  * @returns Promise
  */
 async function hydrate() {

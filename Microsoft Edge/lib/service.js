@@ -8,6 +8,7 @@ chrome.runtime.onStartup.addListener(async () => {
     await disable();
   }
 });
+
 chrome.runtime.onInstalled.addListener(async (details) => {
   switch (details.reason) {
     case chrome.runtime.OnInstalledReason.INSTALL:
@@ -35,10 +36,10 @@ chrome.runtime.onMessage.addListener(async (request, sender) => {
   }
 });
 
+
 chrome.storage.onChanged.addListener(async (changes, namespace) => {
   if (namespace !== "sync") return;
 
-  // Enabled
   if (changes.enabled) {
     if (changes.enabled.newValue) {
       await enable();
@@ -55,16 +56,17 @@ chrome.storage.onChanged.addListener(async (changes, namespace) => {
   }
 });
 
+
 chrome.webNavigation.onCompleted.addListener(trackVideoView, {
   url: [{ hostSuffix: "youtube.com", pathPrefix: "/watch" }],
 });
+
 
 chrome.webNavigation.onHistoryStateUpdated.addListener(trackVideoView, {
   url: [{ hostSuffix: "youtube.com", pathPrefix: "/watch" }],
 });
 
 /**
- * by this extension
  * @returns Promise
  */
 async function trackVideoView() {
@@ -81,6 +83,7 @@ async function trackVideoView() {
 }
 
 /**
+ * Enables this extension core
  * @returns Promise
  */
 async function enable() {
@@ -89,11 +92,11 @@ async function enable() {
   });
   await chrome.action.setIcon({
     path: {
-      16: "icons/icon-16.png",
-      19: "icons/icon-19.png",
-      32: "icons/icon-32.png",
-      38: "icons/icon-38.png",
-      128: "icons/icon-128.png",
+      16: "data/icons/icon-16.png",
+      19: "data/icons/icon-19.png",
+      32: "data/icons/icon-32.png",
+      38: "data/icons/icon-38.png",
+      128: "data/icons/icon-128.png",
     },
   });
   await reloadAffectedTab();
@@ -108,11 +111,11 @@ async function disable() {
   });
   await chrome.action.setIcon({
     path: {
-      16: "icons/icon-disabled-16.png",
-      19: "icons/icon-disabled-19.png",
-      32: "icons/icon-disabled-32.png",
-      38: "icons/icon-disabled-38.png",
-      128: "icons/icon-disabled-128.png",
+      16: "data/icons/icon-disabled-16.png",
+      19: "data/icons/icon-disabled-19.png",
+      32: "data/icons/icon-disabled-32.png",
+      38: "data/icons/icon-disabled-38.png",
+      128: "data/icons/icon-disabled-128.png",
     },
   });
   await reloadAffectedTab();

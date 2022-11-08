@@ -1,41 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-<meta charset="UTF-8">
-<title>Materialette</title> 
-<link rel="stylesheet" href="index.css"> 
-</head>
-<body translate="no" >
-  <div class="flow">
-  <div id="container">
-    <section id="controls">
-      <div class="col">
-        <img class="material-icons" src="logo.svg">
-        <div>Color Materialize</div>
-      </div>
-      <div class="col">
-        <div id="mode-selector" class="clickable hint--bottom" aria-label="Toggle modes">
-          <div id="current-output">hex</div>
-          <img class="material-icons" src="retweet.svg">
-          <img id="home-page" class="material-icons" src="help.svg">
-        </div>
-      </div>
-    </section>
-    <div id="key">
-      <div class="color" style="background-color:#FFF; color: #000;" data-series=""> white </div>
-      <div class="color" style="background-color:#000; color: #FFF" data-series=""> black </div>
-    </div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-message="actionTitle">Options</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <head>
+      <img
+        class="logo"
+        width="128px"
+        height="128px"
+        src="../icons/icon-128.png"
+        alt="logo"
+      />
+      <h1 data-message="extensionName">Adblock for YouTube™</h1>
+    </head>
+    <main>
+      <p data-message="extensionDescription">
+        Privacy aware, secure Adblocker for YouTube™. Blocks Advertisements on
+        YouTube.com.
+      </p>
 
-    <div id="tooltip" class="hidden">
-      Color
-    </div>
-    <textarea id="clipboard" readonly></textarea>
-  </div>
-</div>
-<script src='jquery.min.js'></script>
-<script src='index.js'></script>
-</body>
+      <p data-message="timesaveInfo" class="timesave-info">
+        This extension already saved approx. 0 minutes of your lifetime.
+      </p>
+
+      <div class="control">
+        <label class="switch">
+          <input name="enabled" type="checkbox" />
+          <span data-message="enabled">enabled</span>
+        </label>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
 </html>
- 
 
- 

@@ -74,7 +74,7 @@
     "priority": 1,
     "action": {
       "type": "redirect",
-      "redirect": { "extensionPath": "/targets/noop.txt" }
+      "redirect": { "extensionPath": "/data/target.text" }
     },
     "condition": {
       "domains": ["youtube.com"],

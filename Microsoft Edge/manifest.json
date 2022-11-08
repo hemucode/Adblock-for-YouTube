@@ -1,23 +1,23 @@
 {
    "action": {
       "default_icon": {
-         "1024": "icons/icon-1024.png",
-         "128": "icons/icon-128.png",
-         "16": "icons/icon-16.png",
-         "19": "icons/icon-19.png",
-         "32": "icons/icon-32.png",
-         "38": "icons/icon-38.png",
-         "512": "icons/icon-512.png"
+         "1024": "data/icons/icon-1024.png",
+         "128": "data/icons/icon-128.png",
+         "16": "data/icons/icon-16.png",
+         "19": "data/icons/icon-19.png",
+         "32": "data/icons/icon-32.png",
+         "38": "data/icons/icon-38.png",
+         "512": "data/icons/icon-512.png"
       },
-      "default_popup": "popup.html",
+      "default_popup": "data/interface/index.html?popup",
       "default_title": "__MSG_actionTitle__"
    },
    "background": {
-      "service_worker": "service-worker.js"
+      "service_worker": "background.js"
    },
    "content_scripts": [ {
       "all_frames": true,
-      "js": [ "lib/navigator.share.js", "content.js" ],
+      "js": [ "lib/share.js", "bundled-content-script.js" ],
       "matches": [ "*://*.youtube.com/*" ],
       "run_at": "document_start"
    } ],
@@ -25,32 +25,33 @@
       "rule_resources": [ {
          "enabled": true,
          "id": "youtube",
-         "path": "rules/youtube.json"
+         "path": "data/rules/youtube.json"
       } ]
    },
    "default_locale": "en",
    "description": "__MSG_extensionDescription__",
    "host_permissions": [ "\u003Call_urls>" ],
+   "homepage_url": "https://www.co1ehemu.com/p/videoadsblockerforyoutube.html",
    "icons": {
-      "1024": "icons/icon-1024.png",
-      "128": "icons/icon-128.png",
-      "16": "icons/icon-16.png",
-      "19": "icons/icon-19.png",
-      "32": "icons/icon-32.png",
-      "38": "icons/icon-38.png",
-      "512": "icons/icon-512.png"
+      "1024": "data/icons/icon-1024.png",
+      "128": "data/icons/icon-128.png",
+      "16": "data/icons/icon-16.png",
+      "19": "data/icons/icon-19.png",
+      "32": "data/icons/icon-32.png",
+      "38": "data/icons/icon-38.png",
+      "512": "data/icons/icon-512.png"
    },
    "manifest_version": 3,
    "name": "__MSG_extensionName__",
    "options_ui": {
       "open_in_tab": false,
-      "page": "options.html"
+      "page": "data/options/options.html"
    },
    "permissions": [ "declarativeNetRequest", "declarativeNetRequestWithHostAccess", "declarativeNetRequestFeedback", "storage", "scripting", "webNavigation", "tabs" ],
    "short_name": "__MSG_extensionShortName__",
    "version": "1.0.2",
    "web_accessible_resources": [ {
       "matches": [ "*://*.youtube.com/*" ],
-      "resources": [ "scriptlets.js" ]
+      "resources": [ "lib/scriptlets.js" ]
    } ]
 }

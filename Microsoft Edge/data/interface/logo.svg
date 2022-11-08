@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-  <svg height="80px" viewBox="0 0 100 100" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <style>
-      circle { opacity: 0.8; }
-    </style>
-    <circle cx="32" cy="50" r="30" fill="#4DD0E1"></circle>
-    <circle cx="68" cy="34" r="30" fill="#FFF04D"></circle>
-    <circle cx="60" cy="68" r="30" fill="#F84D8A"></circle>
-  </svg>

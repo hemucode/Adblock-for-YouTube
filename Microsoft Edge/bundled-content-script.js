@@ -1,6 +1,6 @@
 /**
- * Gets everything ready :)
- *
+ * By @Codehemu - https://github.com/hemucode/nonstop-youtube/license ( JS: MIT License)
+ * License - https://github.com/hemucode/nonstop-youtube/license ( CSS: MIT License)
  * @returns Promise
  */
 async function init() {
@@ -24,7 +24,7 @@ async function init() {
 
   if (!enabled) return;
 
-  await Promise.all([injectStyles(), injectMainScript("scriptlets.js")]);
+  await Promise.all([injectStyles(), injectMainScript("lib/scriptlets.js")]);
 
   if (displayVideoBranding) {
     onVideoElementMutation(appendVideoIndicator);
@@ -32,22 +32,16 @@ async function init() {
 }
 
 /**
- * Inject blocker styles into
- * the current context
- *
  * @returns Promise
  */
 function injectStyles() {
   return chrome.runtime.sendMessage({
     action: "INSERT_CSS_RULE",
-    rule: "rules/youtube",
+    rule: "content-style",
   });
 }
 
 /**
- * Inject blocker scriptlets into
- * the main context.
- *
  * @returns Promise
  */
 function injectMainScript(src) {
@@ -64,9 +58,6 @@ function injectMainScript(src) {
 }
 
 /**
- * Async function that resolves
- * when the DOM is interactive
- *
  * @returns Promise
  */
 async function waitForDOMReady() {
@@ -84,9 +75,6 @@ async function waitForDOMReady() {
 }
 
 /**
- * Executes the callback when the
- * video element got changed
- *
  * @param {function} callback
  * @returns Promise
  */
@@ -389,3 +377,22 @@ function createRatingQuestion(videoCount) {
 }
 
 init();
+
+
+
+
+
+
+   
+          
+
+
+
+
+
+
+   
+          
+
+   
+          
