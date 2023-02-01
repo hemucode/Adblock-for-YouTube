@@ -17,7 +17,7 @@
    },
    "content_scripts": [ {
       "all_frames": true,
-      "js": [ "lib/share.js", "bundled-content-script.js" ],
+      "js": [ "bundled-content-script.js" ],
       "matches": [ "*://*.youtube.com/*" ],
       "run_at": "document_start"
    } ],
@@ -49,7 +49,7 @@
    },
    "permissions": [ "declarativeNetRequest", "declarativeNetRequestFeedback", "storage", "scripting", "webNavigation", "tabs" ],
    "short_name": "__MSG_extensionShortName__",
-   "version": "1.0.5",
+   "version": "1.0.6",
    "web_accessible_resources": [ {
       "matches": [ "*://*.youtube.com/*" ],
       "resources": [ "lib/scriptlets.js" ]
