@@ -1,0 +1,168 @@
+:root {
+  --primary-rgb: 26, 115, 232;
+  --onsurface-rgb: 0, 0, 0;
+  --link-color-rgb: 51, 103, 214;
+  --background-color: white;
+}
+
+body {
+  padding: 0;
+  min-width: 240px;
+  font-size: 81.25%;
+}
+
+[is="action-link"],
+[is="action-link"]:active,
+[is="action-link"]:hover,
+[is="action-link"]:visited {
+  color: rgb(var(--link-color-rgb));
+}
+
+.control {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.switch {
+  z-index: 0;
+  position: relative;
+  display: block;
+  color: rgba(var(--onsurface-rgb, 0, 0, 0), 0.87);
+  font-family: var(
+    --font,
+    "Roboto",
+    "Segoe UI",
+    BlinkMacSystemFont,
+    system-ui,
+    -apple-system
+  );
+  line-height: 24px;
+  transition: background-color 0.3s ease;
+}
+
+.switch:hover {
+  border-top-color: #dadadb;
+  background-color: #e8e8e9;
+}
+
+/* Input */
+.switch > input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: -1;
+  position: absolute;
+  right: 26px;
+  top: 4px;
+  display: block;
+  margin: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(var(--onsurface-rgb, 0, 0, 0), 0.38);
+  outline: none;
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  transition: opacity 0.3s 0.1s, transform 0.2s 0.1s;
+}
+
+/* Span */
+.switch > span {
+  display: block;
+  cursor: pointer;
+  text-align: left;
+  font-size: 13px;
+  padding: 12px 20px;
+}
+
+/* Track */
+.switch > span::before {
+  content: "";
+  position: absolute;
+  right: 20px;
+  display: inline-block;
+  margin: 5px 0 5px 10px;
+  border-radius: 7px;
+  width: 36px;
+  height: 14px;
+  background-color: rgba(var(--onsurface-rgb, 0, 0, 0), 0.38);
+  vertical-align: top;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+/* Thumb */
+.switch > span::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 36px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(var(--onprimary-rgb, 255, 255, 255));
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+/* Checked */
+.switch > input:checked {
+  right: 10px;
+  background-color: rgb(var(--primary-rgb, 33, 150, 243));
+}
+
+.switch > input:checked + span::before {
+  background-color: rgba(var(--primary-rgb, 33, 150, 243), 0.6);
+}
+
+.switch > input:checked + span::after {
+  background-color: rgb(var(--primary-rgb, 33, 150, 243));
+  transform: translateX(16px);
+}
+
+/* Hover, Focus */
+.switch:hover > input {
+  opacity: 0.04;
+}
+
+.switch > input:focus {
+  opacity: 0.12;
+}
+
+.switch:hover > input:focus {
+  opacity: 0.16;
+}
+
+/* Active */
+.switch > input:active {
+  opacity: 1;
+  transform: scale(0);
+  transition: transform 0s, opacity 0s;
+}
+
+.switch > input:active + span::before {
+  background-color: rgba(var(--primary-rgb, 33, 150, 243), 0.6);
+}
+
+.switch > input:checked:active + span::before {
+  background-color: rgba(var(--onsurface-rgb, 0, 0, 0), 0.38);
+}
+
+/* Disabled */
+.switch > input:disabled {
+  opacity: 0;
+}
+
+.switch > input:disabled + span {
+  color: rgb(var(--onsurface-rgb, 0, 0, 0));
+  opacity: 0.38;
+  cursor: default;
+}
+
+.switch > input:disabled + span::before {
+  background-color: rgba(var(--onsurface-rgb, 0, 0, 0), 0.38);
+}
+
+.switch > input:checked:disabled + span::before {
+  background-color: rgba(var(--primary-rgb, 33, 150, 243), 0.6);
+}
