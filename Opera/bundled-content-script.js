@@ -1,95 +1,80 @@
 /**
- * By @Codehemu - https://raw.githubusercontent.com/hemucode/Adblock-for-YouTube ( JS: MIT License)
+ * By @Codehemu - https://raw.githubusercontent.com/hemucode/Adblock-for-YouTube/main/Microsoft%20Edge/bundled-content-script.js ( JS: MIT License)
  * License - https://github.com/hemucode/Adblock-for-YouTube/blob/main/LICENSE ( CSS: MIT License)
  */
 async function init() {
+  try {
+    var a = new Promise(function(resolve, reject){
+          chrome.storage.sync.get({"enabled": true}, function(options){
+              resolve(options.enabled);
+          })
+      });
 
-  // chrome.storage.sync.set({
-  //     displayVideoBranding: true,
-  //     videoCount: 10,
-  //     nextRatingRequest: 21,
-  // });
-
-  // chrome.runtime.onStartup.addListener(async () => {});
-   var a = new Promise(function(resolve, reject){
-        chrome.storage.sync.get({"enabled": true}, function(options){
-            resolve(options.enabled);
-        })
-    });
-
-  const enabled = await a;
-  // console.log(enabled);
-
-  var b = new Promise(function(resolve, reject){
-        chrome.storage.sync.get({"displayVideoBranding": true}, function(options){
-            resolve(options.displayVideoBranding);
-        })
-    });
-
-  const displayVideoBranding = await b;
-  // console.log(displayVideoBranding);
-
-  var c = new Promise(function(resolve, reject){
-        chrome.storage.sync.get({"videoCount": 0}, function(options){
-            resolve(options.videoCount);
-        })
-    });
-
-  const videoCount = await c;
-  // console.log(videoCount);
-
-  var d = new Promise(function(resolve, reject){
-        chrome.storage.sync.get({"videoCount": 21}, function(options){
-            resolve(options.videoCount);
-        })
-  });
-
-  const nextRatingRequest = await d;
-  // console.log(nextRatingRequest);
-
-  // await chrome.storage.sync.get(['displayVideoBranding'], function(result) {
-    // console.log('Value currently is displayVideoBranding ' + displayVideoBranding);
-  //   localStorage.displayVideoBranding = result.displayVideoBranding
-  // });
-
-  // await chrome.storage.sync.get(['videoCount'], function(result) {
-    // console.log('Value currently is videoCount ' + videoCount);
-  //   localStorage.videoCount = result.videoCount
-  // });
-
-  // await chrome.storage.sync.get(['nextRatingRequest'], function(result) {
-    // console.log('Value currently is nextRatingRequest ' + nextRatingRequest);
-  //   localStorage.nextRatingRequest = result.nextRatingRequest
-  // });
-
-  // // const enabled = localStorage.enabled
-  // const displayVideoBranding = localStorage.displayVideoBranding
-  // const videoCount = localStorage.videoCount
-  // const nextRatingRequest = localStorage.nextRatingRequest
-
-  
-  // console.log('Value currently is result ' + enabled);
+    const enabled = await a;
+    // console.log(enabled);
     
-  if (
-    window.location.href === "https://www.youtube.com/" &&
-    nextRatingRequest &&
-    videoCount > nextRatingRequest
-  ) {
-    setTimeout(() => {
-      createRatingQuestion(videoCount);
-    }, 2000);
+
+    var b = new Promise(function(resolve, reject){
+          chrome.storage.sync.get({"displayVideoBranding": true}, function(options){
+              resolve(options.displayVideoBranding);
+          })
+      });
+
+    const displayVideoBranding = await b;
+    // console.log(displayVideoBranding);
+
+    var c = new Promise(function(resolve, reject){
+          chrome.storage.sync.get({"videoCount": 0}, function(options){
+              resolve(options.videoCount);
+          })
+      });
+
+    const videoCount = await c;
+    // console.log(videoCount);
+
+    var d = new Promise(function(resolve, reject){
+          chrome.storage.sync.get({"videoCount": 21}, function(options){
+              resolve(options.videoCount);
+          })
+    });
+
+    const nextRatingRequest = await d;
+    // console.log(nextRatingRequest);
+
+      
+    if (
+      window.location.href === "https://www.youtube.com/" &&
+      nextRatingRequest &&
+      videoCount > nextRatingRequest
+    ) {
+      setTimeout(() => {
+        createRatingQuestion(videoCount);
+      }, 2000);
+    }
+
+    if (!enabled) return;
+    console.log(`[Video Ads Blocker for Youtube™ v${chrome.runtime.getManifest().version} Enabled]`);
+    console.log(chrome.i18n.getMessage("videoBranding") +` https://addons.opera.com/en/extensions/details/adblock-for-youtubetm-best-adblocker/`)
+
+    // console.log("videoCount");
+
+    if (displayVideoBranding) {
+      onVideoElementMutation(appendVideoIndicator);
+    }
+
+    await Promise.all([injectStyles(), injectMainScript("lib/scriptlets.js")]);
+
+    /**
+    * @returns Promise
+    */
+
   }
-
-  if (!enabled) return;
-  console.log("videoCount");
-
-  await Promise.all([injectStyles(), injectMainScript("lib/scriptlets.js")]);
-
-  if (displayVideoBranding) {
-    onVideoElementMutation(appendVideoIndicator);
+  catch(err) {
+    console.log(err.message);
   }
-
+ 
 }
+init();
 
 /**
  * @returns Promise
@@ -180,7 +165,7 @@ function appendVideoIndicator(target) {
   // Create Element
   const anchor = document.createElement("a");
   anchor.className = "adblock-for-youtube-branding yt-formatted-string";
-  anchor.href = `https://www.downloadhub.cloud/2022/11/adblock-for-youtube.html`;
+  anchor.href = `https://addons.opera.com/en/extensions/details/adblock-for-youtubetm-best-adblocker/`;
   anchor.textContent = chrome.i18n.getMessage("videoBranding");
   anchor.target = "_blank";
   anchor.rel = "noopener";
@@ -206,7 +191,7 @@ function appendVideoIndicator(target) {
     return navigator.share({
       title: chrome.i18n.getMessage("extensionName"),
       text: chrome.i18n.getMessage("extensionDescription"),
-      url: `https://www.downloadhub.cloud/2022/11/adblock-for-youtube.html`,
+      url: `https://addons.opera.com/en/extensions/details/adblock-for-youtubetm-best-adblocker/`,
     });
   };
 
@@ -341,7 +326,7 @@ function createRatingQuestion(videoCount) {
   ]);
 
   const reviewButton = document.createElement("a");
-  reviewButton.href = `https://www.downloadhub.cloud/2022/11/adblock-for-youtube.html`;
+  reviewButton.href = `https://addons.opera.com/en/extensions/details/adblock-for-youtubetm-best-adblocker/`;
   reviewButton.target = "_blank";
   reviewButton.rel = "noopener";
   reviewButton.style.backgroundColor = "var(--yt-spec-badge-chip-background)";
@@ -429,7 +414,6 @@ function createRatingQuestion(videoCount) {
   content.appendChild(daaButton);
 }
 
-init();
 
 
 
