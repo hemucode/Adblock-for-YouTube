@@ -43,7 +43,7 @@
    },
    "timesaveInfo": {
       "description": "Tells the user how many time he saved already.",
-      "message": "Adblock para Youtube™ guardó aprox. $tiempoAhorrado$ de su vida.",
+      "message": "Adblock para Youtube™ guardó aprox. de su vida.",
       "placeholders": {
          "savedTime": {
             "content": "$1",
