@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Options</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="control">
+      <label class="switch">
+        <input name="enabled" type="checkbox" />
+        <span data-message="enabled">Enabled</span>
+      </label>
+    </div>
+
+    <div class="control">
+      <label class="switch">
+        <input name="displayVideoBranding" type="checkbox" />
+        <span data-message="displayVideoBranding">Video indicator</span>
+      </label>
+    </div>
+
+    <div class="control">
+      <label class="switch">
+        <input name="displayActionCountAsBadgeText" type="checkbox" />
+        <span data-message="displayActionCountAsBadgeText"
+          >Show blocked requests count in badge</span
+        >
+      </label>
+    </div>
+
+    <script src="options.js"></script>
+  </body>
+</html>

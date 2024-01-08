@@ -1,0 +1,58 @@
+{
+  "extensionName": {
+    "message": "YouTube™ को लागि Adblock — best adblocker",
+    "description": "The name of the application"
+  },
+  "extensionShortName": {
+    "message": "Adb YouTube™",
+    "description": "The short_name (maximum of 12 characters recommended) is a short version of the extension's name."
+  },
+  "extensionDescription": {
+    "message": "गोपनीयता सचेत, YouTube™ को लागि सुरक्षित Adblock। YouTube.com मा विज्ञापनहरू रोक्छ।",
+    "description": "The description of the application"
+  },
+  "actionTitle": {
+    "message": "विकल्पहरू"
+  },
+  "enabled": {
+    "message": "सक्षम गरियो"
+  },
+  "disabled": {
+    "message": "अक्षम"
+  },
+  "timesaveInfo": {
+    "message": "Youtube™ को लागी Adblock लगभग बचत गरियो। आफ्नो जीवनकालको $savedTime$।",
+    "description": "Tells the user how many time he saved already.",
+    "placeholders": {
+      "savedTime": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "videoBranding": {
+    "message": "YouTube™ को लागि Adblock द्वारा सफा गरियो",
+    "description": "Shown below a video"
+  },
+  "displayVideoBranding": {
+    "message": "भिडियो तल विस्तार जानकारी देखाउनुहोस्",
+    "description": "Boolean Option"
+  },
+  "displayActionCountAsBadgeText": {
+    "message": "अवरुद्ध अनुरोधहरू ब्याजमा गणना देखाउनुहोस्",
+    "description": "Boolean Option"
+  },
+  "recommend": {
+    "message": "सिफारिस गर्नुहोस्",
+    "description": "Shown by the recommend button"
+  },
+  "helpUsWithAReview": {
+    "message": "हामीलाई समीक्षा गर्न मद्दत गर्नुहोस्"
+  },
+  "later": {
+    "message": "पछि"
+  },
+  "dontAskAgain": {
+    "message": "फेरि नसोध्नुहोस्"
+  }
+}
