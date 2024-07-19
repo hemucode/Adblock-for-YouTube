@@ -1,0 +1,58 @@
+{
+  "extensionName": {
+    "message": "Adblock fir YouTube™ — best adblocker",
+    "description": "The name of the application"
+  },
+  "extensionShortName": {
+    "message": "Adb YouTube™",
+    "description": "The short_name (maximum of 12 characters recommended) is a short version of the extension's name."
+  },
+  "extensionDescription": {
+    "message": "Privatsphär bewosst, sécher Adblock fir YouTube ™. Blockéiert Annoncen op YouTube.com.",
+    "description": "The description of the application"
+  },
+  "actionTitle": {
+    "message": "Optiounen"
+  },
+  "enabled": {
+    "message": "Aktivéiert"
+  },
+  "disabled": {
+    "message": "Behënnert"
+  },
+  "timesaveInfo": {
+    "message": "Adblock fir Youtube™ gespäichert ca. $savedTime$ vun Ärem Liewen.",
+    "description": "Tells the user how many time he saved already.",
+    "placeholders": {
+      "savedTime": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "videoBranding": {
+    "message": "Gebotzt duerch Adblock fir YouTube ™",
+    "description": "Shown below a video"
+  },
+  "displayVideoBranding": {
+    "message": "Show Extensioun Infoen ënnert Video",
+    "description": "Boolean Option"
+  },
+  "displayActionCountAsBadgeText": {
+    "message": "Show blockéiert Ufroe zielen am Badge",
+    "description": "Boolean Option"
+  },
+  "recommend": {
+    "message": "Recommandéieren",
+    "description": "Shown by the recommend button"
+  },
+  "helpUsWithAReview": {
+    "message": "Hëlleft eis mat enger Bewäertung"
+  },
+  "later": {
+    "message": "Méi spéit"
+  },
+  "dontAskAgain": {
+    "message": "Frot net nach eng Kéier"
+  }
+}
